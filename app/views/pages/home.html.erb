@@ -1,0 +1,8 @@
+<h1>Welcome to ColdFront</h1>
+<p>You are logged in as <%= current_user.email %>.</p>
+<p>You currently control <%= pluralize current_user.balance, 'ColdFront Token' %>.</p>
+<% if current_user.balance > 3 %>
+  <p><strong>HOLY SHIT DUDE YOU QUALIFY FOR 10% OFF AT TARGET</strong></p>
+<% end %>
+<%= button_to "Manage Wallets", wallets_path, method: :get %>
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>
