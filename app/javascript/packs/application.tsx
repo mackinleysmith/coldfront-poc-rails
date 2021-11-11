@@ -13,10 +13,6 @@ import WalletSelectorApp from "../components/WalletSelectorApp";
 Rails.start();
 ActiveStorage.start();
 
-if (typeof window.ethereum !== "undefined") {
-  console.log("MetaMask is installed!");
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("wallet-app")) {
     ReactDOM.render(

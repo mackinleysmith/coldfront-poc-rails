@@ -5,15 +5,13 @@ import {
   useWallet,
 } from "@solana/wallet-adapter-react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import {
-  getLedgerWallet,
-  getPhantomWallet,
-  getSlopeWallet,
-  getSolflareWallet,
-  getSolletExtensionWallet,
-  getSolletWallet,
-  getTorusWallet,
-} from "@solana/wallet-adapter-wallets";
+import { getLedgerWallet } from "@solana/wallet-adapter-wallets/lib/ledger";
+import { getPhantomWallet } from "@solana/wallet-adapter-wallets/lib/phantom";
+import { getSlopeWallet } from "@solana/wallet-adapter-wallets/lib/slope";
+import { getSolflareWallet } from "@solana/wallet-adapter-wallets/lib/solflare";
+import { getSolletExtensionWallet } from "@solana/wallet-adapter-wallets/lib/solletExtension";
+import { getSolletWallet } from "@solana/wallet-adapter-wallets/lib/sollet";
+import { getTorusWallet } from "@solana/wallet-adapter-wallets/lib/torus";
 import {
   WalletModalProvider,
   WalletDisconnectButton,
@@ -49,7 +47,7 @@ export const WalletAddressFieldWithSelectorButtons = () => {
 
 export const WalletSelectorApp = () => {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
-  const network = WalletAdapterNetwork.Devnet;
+  const network = WalletAdapterNetwork.Mainnet;
 
   // You can also provide a custom RPC endpoint
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
